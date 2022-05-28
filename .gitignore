@@ -1,32 +1,50 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.bz2
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
 
-# compiled output
-/dist/
-/tmp/
+# Logs and databases #
+######################
+*.log
+*.sql
+*.htaccess
 
-# dependencies
-/bower_components/
-/node_modules/
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+._*
 
-# misc
-/.env*
-/.pnp*
-/.sass-cache
-/.eslintcache
-/connect.lock
-/coverage/
-/libpeerconnection.log
-/npm-debug.log*
-/testem.log
-/yarn-error.log
 
-# ember-try
-/.node_modules.ember-try/
-/bower.json.ember-try
-/npm-shrinkwrap.json.ember-try
-/package.json.ember-try
-/package-lock.json.ember-try
-/yarn.lock.ember-try
+# Git Files #
+#############
+HEAD
+config
+description
+hooks/
+info/
 
-# broccoli-debug
-/DEBUG/
+# Vim generated files #
+######################
+*.un~
+
+# SASS #
+##########
+.sass-cache
+
+# Package Manager and Bundler #
+##############################
+node_modules/
+bower_components/
+.data/
+plugins/**/vendor
