@@ -57,6 +57,48 @@
   });
   0; //eaimeta@70e063a35619d71f0,"@glimmer/component/-private/ember-component-manager"eaimeta@70e063a35619d71f
 });
+;define("ember-quickstart/components/people-list", ["exports", "@ember/component", "@ember/template-factory", "@glimmer/component", "@ember/object"], function (_exports, _component, _templateFactory, _component2, _object) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _class;
+
+  0; //eaimeta@70e063a35619d71f0,"ember-cli-htmlbars",0,"@glimmer/component",0,"@ember/object"eaimeta@70e063a35619d71f
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) { var desc = {}; Object.keys(descriptor).forEach(function (key) { desc[key] = descriptor[key]; }); desc.enumerable = !!desc.enumerable; desc.configurable = !!desc.configurable; if ('value' in desc || desc.initializer) { desc.writable = true; } desc = decorators.slice().reverse().reduce(function (desc, decorator) { return decorator(target, property, desc) || desc; }, desc); if (context && desc.initializer !== void 0) { desc.value = desc.initializer ? desc.initializer.call(context) : void 0; desc.initializer = undefined; } if (desc.initializer === void 0) { Object.defineProperty(target, property, desc); desc = null; } return desc; }
+
+  const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
+  /*
+    <h2>{{@title}}</h2>
+  
+  <ul>
+      {{#each @people as |person|}}
+          <li>
+              <button type="button" {{on 'click' (fn this.showPerson person)}}>{{person}}</button>
+          </li>
+      {{/each}}
+  </ul>
+  */
+  {
+    "id": "3SZiIfRQ",
+    "block": "[[[10,\"h2\"],[12],[1,[30,1]],[13],[1,\"\\n\\n\"],[10,\"ul\"],[12],[1,\"\\n\"],[42,[28,[37,1],[[28,[37,1],[[30,2]],null]],null],null,[[[1,\"        \"],[10,\"li\"],[12],[1,\"\\n            \"],[11,\"button\"],[24,4,\"button\"],[4,[38,2],[\"click\",[28,[37,3],[[30,0,[\"showPerson\"]],[30,3]],null]],null],[12],[1,[30,3]],[13],[1,\"\\n        \"],[13],[1,\"\\n\"]],[3]],null],[13]],[\"@title\",\"@people\",\"person\"],false,[\"each\",\"-track-array\",\"on\",\"fn\"]]",
+    "moduleName": "ember-quickstart/components/people-list.hbs",
+    "isStrictMode": false
+  });
+
+  let PeopleListComponent = (_class = class PeopleListComponent extends _component2.default {
+    showPerson(person) {
+      alert(`The person's name is ${person}!`);
+    }
+
+  }, (_applyDecoratedDescriptor(_class.prototype, "showPerson", [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, "showPerson"), _class.prototype)), _class);
+  _exports.default = PeopleListComponent;
+  (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, PeopleListComponent);
+});
 ;define("ember-quickstart/components/welcome-page", ["exports", "ember-welcome-page/components/welcome-page.js"], function (_exports, _welcomePage) {
   "use strict";
 
@@ -346,7 +388,27 @@
   }
 
   _exports.default = Router;
-  Router.map(function () {});
+  Router.map(function () {
+    this.route('scientists');
+  });
+});
+;define("ember-quickstart/routes/scientists", ["exports", "@ember/routing/route"], function (_exports, _route) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  0; //eaimeta@70e063a35619d71f0,"@ember/routing/route"eaimeta@70e063a35619d71f
+
+  class ScientistsRoute extends _route.default {
+    model() {
+      return ['Marie Curie', 'Mae Jemison', 'Albert Hofmann'];
+    }
+
+  }
+
+  _exports.default = ScientistsRoute;
 });
 ;define("ember-quickstart/serializers/-default", ["exports", "@ember-data/serializer/json"], function (_exports, _json) {
   "use strict";
@@ -456,9 +518,27 @@
   0; //eaimeta@70e063a35619d71f0,"@ember/template-factory"eaimeta@70e063a35619d71f
 
   var _default = (0, _templateFactory.createTemplateFactory)({
-    "id": "foklK/61",
-    "block": "[[[1,[28,[35,0],[\"EmberQuickstart\"],null]],[1,\"\\n\\n\"],[8,[39,1],null,null,null],[1,\"\\n\"],[1,\"\\n\"],[46,[28,[37,3],null,null],null,null,null]],[],false,[\"page-title\",\"welcome-page\",\"component\",\"-outlet\"]]",
+    "id": "3I4cC3JC",
+    "block": "[[[10,\"h1\"],[12],[1,\"PeopleTracker\"],[13],[1,\"\\n\"],[46,[28,[37,1],null,null],null,null,null]],[],false,[\"component\",\"-outlet\"]]",
     "moduleName": "ember-quickstart/templates/application.hbs",
+    "isStrictMode": false
+  });
+
+  _exports.default = _default;
+});
+;define("ember-quickstart/templates/scientists", ["exports", "@ember/template-factory"], function (_exports, _templateFactory) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  0; //eaimeta@70e063a35619d71f0,"@ember/template-factory"eaimeta@70e063a35619d71f
+
+  var _default = (0, _templateFactory.createTemplateFactory)({
+    "id": "LMt2uwq5",
+    "block": "[[[8,[39,0],null,[[\"@title\",\"@people\"],[\"List of Scientists\",[30,1]]],null]],[\"@model\"],false,[\"people-list\"]]",
+    "moduleName": "ember-quickstart/templates/scientists.hbs",
     "isStrictMode": false
   });
 
@@ -543,7 +623,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+dc0adf11"});
+            require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+177d1bb0"});
           }
         
 //# sourceMappingURL=ember-quickstart.map
